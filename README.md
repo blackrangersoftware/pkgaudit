@@ -1,4 +1,4 @@
-##PkgAudit##
+## PkgAudit
 
 A tool for auditing packages on Debian(Ubuntu) based linux systems. At the 
 moment the tool outputs a CSV with the following information about packages
