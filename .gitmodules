@@ -1,0 +1,3 @@
+[submodule "bin/dpkg-licenses"]
+	path = bin/dpkg-licenses
+	url = https://github.com/daald/dpkg-licenses.git
