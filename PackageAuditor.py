@@ -1,5 +1,3 @@
-#! /usr/bin/python3
-
 import os, csv, sys
 
 packages = {}
@@ -17,12 +15,14 @@ def ParseLicenses(licenses, repos):
     repos = csv.DictReader(repos, delimiter="|") 
 
     for license in licenses:
-        package = packages[license["Name"]] = {}
+        package = packages[license["Name"].split(":")[0]] = {}
         package["Licenses"] = license["Licenses"]
         package["Version"] = license["Version"]
         package["Name"] = license["Name"]
 
     for repo in repos:
+        if repo["Name"] == "Listing...":
+            continue
         try:
             packages[repo["Name"]]["Repos"] = repo["Repos"]
         except:
